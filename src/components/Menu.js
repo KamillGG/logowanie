@@ -15,8 +15,10 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { useState } from "react";
 import PocketBase from 'pocketbase';
+import Image from "next/image";
+import { baseUrl } from "@/lib/constants";
 
-const pb = new PocketBase('http://172.16.15.132:8080');
+const pb = new PocketBase(baseUrl);
 export default function Menu() {
     const [data, setData] = useState(pb.authStore.model)
     console.log(data)
@@ -37,11 +39,11 @@ export default function Menu() {
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <Avatar>
-                            <AvatarImage src={data &&pb.files.getUrl(data,data.avatar)}/>
+                            <AvatarImage src={data && pb.files.getUrl(data,data.avatar)} alt="@shadcn"/>
                             <AvatarFallback>CN</AvatarFallback>
                         </Avatar>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent>
+                    <DropdownMenuContent className='cursor-pointer'>
                         {!data &&(
 
                         <DropdownMenuLabel onClick={handleLogin}>Login</DropdownMenuLabel>
