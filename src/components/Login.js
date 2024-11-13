@@ -45,7 +45,7 @@ export default function Login(){
             </div>
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="pass">Password</Label>
-              <Input id="pass" placeholder="Password..." onChange={(e)=>{handleInput(e,"password")}}/>
+              <Input id="pass" placeholder="Password..." onChange={(e)=>{handleInput(e,"password")}} type='password'/>
             </div>
           </div>
       </CardContent>

@@ -29,6 +29,9 @@ export default function Menu() {
     const handleLogin = ()=>{
         window.location.href='/loginForm'
     }
+    const handleSettings = ()=>{
+        window.location.href='/settings'
+    }
     return (
         <div className="flex justify-between px-5 py-2">
             <div>
@@ -49,8 +52,10 @@ export default function Menu() {
                         <DropdownMenuLabel onClick={handleLogin}>Login</DropdownMenuLabel>
                         )}
                         {data && (
-
+                            <>
+                            <DropdownMenuLabel onClick={handleSettings}>Settings</DropdownMenuLabel>
                         <DropdownMenuLabel onClick={handleLogout}>Logout</DropdownMenuLabel>
+                            </>
                         )}
                     </DropdownMenuContent>
                 </DropdownMenu>
