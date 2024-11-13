@@ -106,7 +106,7 @@ export default function Home() {
                       </AlertDialog>
                       <Update item={item} saveChanges={saveChanges} />
                     </>
-                  ) : ('Nie możesz')}
+                  ) : ('')}
                 </CardFooter>
               </Card>
             ))
